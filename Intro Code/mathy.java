@@ -88,13 +88,19 @@ public class mathy
 	public int [] getEven(int[] num)
 	{
 		int [] evens = new int[num.length];
-
-
+		int k = 0;
+		
+		for (int number : num)
+		{
+		    if (number % 2 == 0)
+		    {
+		        evens[k] = number;
+		        k++;
+		    }
+		}
 
 		return evens;
 	}//end of getEven
-
-
 
 
 
