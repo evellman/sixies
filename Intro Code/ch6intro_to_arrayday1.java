@@ -21,6 +21,36 @@ public class ch6intro_to_arrayday1
 public static void main (String[] args)
 {
     //ArrayList notes
+    
+    /*
+    //Array practice
+    int[] practice = new int[10];
+    
+    practice[0] = 17;
+    practice[practice.length-1] = 29;
+    
+    for (int i = 1; i < practice.length-1; i++)   //can't use for each loop for these
+    {
+        practice[i] = -1;
+    }
+    
+    for (int i = 0; i < practice.length; i++)
+    {
+        practice[i]-=1;
+    }
+    
+    for (int s: practice)
+    {
+        System.out.println(s);
+    }
+    
+    System.out.println("-------------------");
+    
+    for (int s: practice)
+    {
+        System.out.print(s + ",");
+    }
+    
 /*
     // <> indicates the type of ArrayList
     ArrayList <String> farm = new ArrayList<>();
@@ -89,6 +119,13 @@ public static void main (String[] args)
 
 
 /**/
+
+        //initializer list
+        int test [] = {1,2,2,2,4,5,6,7,8,9};
+        int[] test2 = {1,2,3,4,5,6,7,8,9,10};
+        
+        String[] names = {"Tom","Ben","Lewis","Duncan","Paul","Rick","Joakim","Harry"};
+
         mathy useful = new mathy();
         int x = 50;
        int[] num = new int[20];
@@ -106,20 +143,20 @@ public static void main (String[] args)
        {
             num[i] = gen.nextInt(100)-50;
         }
-/**/
+/*
        for(int i =0; i<num.length; i++)
        {
             System.out.println( num[i] );
         }
         System.out.println("-----------");
-/**/
+/*
         int look = 42;
 
-        System.out.println(Searches.linearSearch(num,look)  );
+        System.out.println(Searches.linearSearch(num,look));
         System.out.println("-----------");
         Sorts.selectionSort(num);
 
-        System.out.println(Searches.binarySearch(num,look)  );
+        System.out.println(Searches.binarySearch(num,look));
 
 
 
@@ -132,7 +169,7 @@ public static void main (String[] args)
         {
             System.out.println(s);
         }
-/**/
+/*
         System.out.println("-----------");
         for(int s : num)
         {
@@ -214,12 +251,13 @@ public static void main (String[] args)
  */
 
 
- /*
+ /**/
        //make a two dementional array
-       int [][] table = new int [5][10];
+       int [][] table = new int [5][10];    //5x10
 
+       //row major
        // Load the table with values
-       for (int row=0; row < table.length; row++)
+       for (int row=0; row < table.length; row++)   
           for (int col=0; col < table[row].length; col++)
              table[row][col] = row * 10 + col;
 
@@ -235,20 +273,20 @@ public static void main (String[] args)
 
     // make a 2d array with an iniitalizer list.
     //print the length of row and col
-/*
+/**/
     int [][] scores = { {1,2,3},//6
                         {2,2,3},//7
                         {3,2,3},//8
                         {4,2,3}    };//9
 
-
+/**/
     System.out.println(scores[0].length+"col");
     System.out.println(scores.length+"row");
+/**/
+    System.out.print("The sum of this array is " + mathy.sum2DArray(scores));
 
-    System.out.print("The sum of this array is" + mathy.sum2DArray(scores));
-
-    System.out.print(mathy.sumOneRow2DArray(scores, 3));
-    System.out.print(mathy.sumOneRow2DArray(scores[3]));
+    //System.out.print(mathy.sumOneRow2DArray(scores, 3));
+    //System.out.print(mathy.sumOneRow2DArray(scores[3]));
 
 
 /*

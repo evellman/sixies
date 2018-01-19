@@ -13,8 +13,8 @@ public class Searches
    //-----------------------------------------------------------------
    public static int linearSearch (int[] numbers, int key)
    {
-      for (int index = 0; index < numbers.length; index++)
-         if (key == numbers[index])
+      for (int index = 0; index < numbers.length; index++)      //will b on test
+         if (key == numbers[index])                             //list doesn't have to be sorted
             return index;
       return -1;
    }
@@ -29,8 +29,8 @@ public class Searches
    {
       int low = 0, high = numbers.length-1, middle = (low + high) / 2;
 
-      while (numbers[middle] != key && low <= high)
-      {
+      while (numbers[middle] != key && low <= high)     //worst case scenario:
+      {                                                 //takes 7 tries (for 100 nums)
          if (key < numbers[middle])
             high = middle - 1;
          else
