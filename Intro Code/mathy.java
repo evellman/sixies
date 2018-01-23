@@ -226,16 +226,154 @@ public class mathy
        return array;
    }
    
+   public static void swap(int[] array)
+   {
+       int first = array[0];
+       int last = array[array.length-1];
+       
+       array[0] = last;
+       array[array.length-1] = first;
+       
+       
+    }
+    
+   public static void shiftRight(int[] array)
+   {
+       int last = array[array.length-1];
+       for(int i = array.length-2; i>=0 ; i--)
+       {
+           array[i+1] = array[i];
+        }
+        
+       array[0] = last;
+    }
+    
+   public static void replaceEven(int[] array)
+   {
+       for (int s : array)
+       {
+           if(s % 2 == 0)
+           {
+               s = 0;
+            }
+        }
+    }
+    
+   public static void replace (int[] array)
+   {
+       for ( int i = 1; i < array.length-1; i++)
+       {
+           if(array[i-1] > array[i+1])
+           {
+               array[i] = array[i-1];
+            }
+           else if (array[i+1] > array[i-1])
+           {
+               array[i] = array[i+1];
+            }
+           else if (array[i+1] == array[i-1])
+           {
+               array[i] = array[i-1];
+            }
+        }
+    }
 
+   public static int[] removeMid(int[] array)
+   {
+       if (array.length % 2 == 0)
+       {
+           int[] new_array = new int[array.length-2];
+           int mid = array.length/2;
+           int k = 0;
+           for(int i = 0; i < array.length; i++)
+           {
+               if (!(i == mid || i == mid-1))
+               {
+                   new_array[k] = array[i];
+                   k++;
+                }
+            }
+           return new_array;
+        }
+       else 
+       {
+           int[] new_array = new int[array.length-1];
+           int mid = array.length/2;
+           int k = 0;
+           for(int i = 0; i < array.length; i++)
+           {
+               if (!(i == mid))
+               {
+                   new_array[k] = array[i];
+                   k++;
+                }
+            }
+            return new_array;
+        }
+    }
 
+   public static void moveEven(int[] array)
+   {
+       
+    }
 
+    public static int secondLargest(int[] array)
+    {
+      for (int index = 1; index < array.length; index++)
+      {
+         int key = array[index];
+         int position = index;
 
+         // shift larger values to the right
+         while (position > 0 && array[position-1] > key)
+         {
+            array[position] = array[position-1];
+            position--;
+         }
 
+         array[position] = key;
+      }
+      return array[array.length-2];
+    }
+    
+    public static boolean sorted(int[] array)
+    {
+        for(int i = 0; i < array.length-1; i++)
+        {
+            if(!(array[i] < array[i+1]))
+            {
+                return false;
+            }
+            
+        }
+        return true;
+    }
 
+    public static boolean adjDup(int[] array)
+    {
+        for(int i = 0; i < array.length-1; i++)
+        {
+            if(array[i] == array[i+1])
+            {
+                return true;
+            }
+            
+        }
+        return false;
+    }
 
-
-
-
+    public static boolean Dup(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            for( int k = i + 1; k < array.length; k++)
+            {
+                if (array[i] == array[k])
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
