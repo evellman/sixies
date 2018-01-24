@@ -312,9 +312,38 @@ public class mathy
         }
     }
 
-   public static void moveEven(int[] array)
+   public static int[] moveEven(int[] array)
    {
-       
+       int[] new_array = new int[array.length];
+       int[] temp = new int[array.length];
+       int k = 0;
+       int j = 0;
+       for(int i = 0; i < array.length; i++)
+       {
+           if (array[i] % 2 == 0)
+           {
+               new_array[k] = array[i];
+               k++;
+            }
+           else 
+           {
+               temp[j] = array[i];
+               j++;
+            }
+        }
+  
+       int p = 0;
+       for (int h = 0; h < new_array.length; h++)
+       {
+           
+           if (new_array[h] == 0)
+           {
+               new_array[h] = temp[p];
+               p++;
+            }
+            
+        }
+       return new_array; 
     }
 
     public static int secondLargest(int[] array)
@@ -375,9 +404,29 @@ public class mathy
         return false;
     }
 
+    public static void swapRow (int[][] array)
+    {
+        int[] temp = array[2];
+        array[2] = array[3];
+        array[3] = temp;
+        
+    }
 
+    public static void swapCol (int[][] array)
+    {
+//         int[] temp = new int[array[0][2].length];
+//         temp = array[][2];
+//         array[][2] = array [][3];
+//         array[][3] = temp;
 
-
+//         for (int i = 0; i < array.length; i++)
+//         {
+//            
+//             int temp = array[i][k];
+//             array[
+//             
+//         }
+    }
 
 
 
