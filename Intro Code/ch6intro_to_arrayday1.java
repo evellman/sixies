@@ -273,16 +273,16 @@ public static void main (String[] args)
 
     // make a 2d array with an iniitalizer list.
     //print the length of row and col
-/**/
+/*
     int [][] scores = { {1,2,3},//6
                         {2,2,3},//7
                         {3,2,3},//8
                         {4,2,3}    };//9
 
-/**/
+/*
     System.out.println(scores[0].length+"col");
     System.out.println(scores.length+"row");
-/**/
+/*
     System.out.print("The sum of this array is " + mathy.sum2DArray(scores));
 
     //System.out.print(mathy.sumOneRow2DArray(scores, 3));
@@ -292,7 +292,18 @@ public static void main (String[] args)
 /*
     System.out.print(mathy.sumrow(scores[0]));
 
-
+*/
+    mathy.swapRow(table);
+    System.out.println("-----");
+    for(int row = 0;row < table.length;row++)
+    {
+        for (int col = 0; col < table[row].length;col++)
+        {
+            System.out.print(table[row][col] + "\t");
+            
+        }
+        System.out.println();
+    }
 
 /**/
 }// end of main

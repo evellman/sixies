@@ -414,18 +414,12 @@ public class mathy
 
     public static void swapCol (int[][] array)
     {
-//         int[] temp = new int[array[0][2].length];
-//         temp = array[][2];
-//         array[][2] = array [][3];
-//         array[][3] = temp;
-
-//         for (int i = 0; i < array.length; i++)
-//         {
-//            
-//             int temp = array[i][k];
-//             array[
-//             
-//         }
+        for (int i = 0; i < array.length; i++)
+        {
+            int temp = array[i][2];
+            array[i][2] = array[i][3];
+            array[i][3] = temp;
+        }
     }
 
 
