@@ -413,7 +413,7 @@ public class mathy
     }
 
     public static void swapCol (int[][] array)
-    {
+    {   //need to put array[i]
         for (int i = 0; i < array.length; i++)
         {
             int temp = array[i][2];

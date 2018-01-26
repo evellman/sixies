@@ -21,6 +21,7 @@ public class ch6intro_to_arrayday1
 public static void main (String[] args)
 {
     //ArrayList notes
+ 
     
     /*
     //Array practice
@@ -51,11 +52,12 @@ public static void main (String[] args)
         System.out.print(s + ",");
     }
     
-/*
+/**/
     // <> indicates the type of ArrayList
     ArrayList <String> farm = new ArrayList<>();
 
-    farm.add("cow");farm.add("chicken");
+    farm.add("cow");
+    farm.add("chicken");
     for (int i = 0; i<20;i++)
     {
         farm.add("cow");
@@ -71,28 +73,80 @@ public static void main (String[] args)
 
     System.out.println(farm);
 
+    //if farm wasn't typed, you would have to write (String)farm.get(25)
+    System.out.println(farm.get(25));
+/*
+    //version 1
     int count = 0;
     for (int i = 0; i<farm.size();i++)
     {
         if(farm.get(i).equals("chicken"))
             count++;
 
+        //doesn't work because of dynamic size
         if (farm.get(i).equals("chicken"))
             farm.remove(i);
-
+        
 
     }
+*/
+/*
+    //version 2
+    int count = 0;
+    for(int i = 0; i < farm.size(); i++)
+    {
 
+        if (farm.get(i).equals("chicken"))
+        {
+            farm.remove(i);
+            i--;
+        }
+        
+        if(farm.get(i).equals("chicken"))
+            count++;
+    }
+    
+*/
+    //version 3
+    int count = 0;
+    for(int i = farm.size()-1; i >= 0; i--)
+    {
+        if (farm.get(i).equals("chicken"))
+        {
+            farm.remove(i);
+        }
+    }
     System.out.println("There are " + count+ " chickens");
 
     System.out.println(farm);
-
+/**/
     ArrayList <String> list = new ArrayList<>();
 
-    //ArrayList <int> list1 = new ArrayList<>();// no primitive data types
+    //ArrayList <int> list1 = new ArrayList<>();    // no primitive data types
 
     ArrayList <Integer> list1 = new ArrayList<>();
+    
+    for(int i = 1; i <= 54; i++)
+    {
+        list1.add(i);
+    }
+    
+    System.out.println(list1);
+    
+    int[] list1array = new int[6];
+    for (int i = 0; i < 6; i++)
+    {
+        list1array[i] = (int)(Math.random() * 53 + 1);
+    }
 
+    for(int s: list1array)
+    {
+        System.out.println(list1.remove(s));
+    }
+    
+    System.out.println(list1);
+    
+/*
     ArrayList <CD> mycds = new ArrayList<>();
 
     //for(int i = 0; i<3; i++)
@@ -118,7 +172,7 @@ public static void main (String[] args)
 
 
 
-/**/
+/*
 
         //initializer list
         int test [] = {1,2,2,2,4,5,6,7,8,9};
@@ -138,7 +192,7 @@ public static void main (String[] args)
        Random gen = new Random();
        //int[] num = new int[20];
 // pop with random numbers range -50 to 50
-/**/
+/*
        for(int i =0; i<num.length; i++)
        {
             num[i] = gen.nextInt(100)-50;
@@ -251,7 +305,7 @@ public static void main (String[] args)
  */
 
 
- /**/
+ /*
        //make a two dementional array
        int [][] table = new int [5][10];    //5x10
 
@@ -293,6 +347,7 @@ public static void main (String[] args)
     System.out.print(mathy.sumrow(scores[0]));
 
 */
+/*
     mathy.swapRow(table);
     System.out.println("-----");
     for(int row = 0;row < table.length;row++)
