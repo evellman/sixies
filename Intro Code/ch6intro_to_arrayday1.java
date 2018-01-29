@@ -119,6 +119,10 @@ public static void main (String[] args)
     System.out.println("There are " + count+ " chickens");
 
     System.out.println(farm);
+    
+    farm.add(0,"Emu"); //adds emu at start of arraylist
+    farm.set(0,"Owl"); //replaces emu with owl
+    
 /**/
     ArrayList <String> list = new ArrayList<>();
 
@@ -128,24 +132,25 @@ public static void main (String[] args)
     
     for(int i = 1; i <= 54; i++)
     {
-        list1.add(i);
+        list1.add(i);   //autoboxes int --> Integer (automatically changes an int to an Integer
     }
     
     System.out.println(list1);
     
-    int[] list1array = new int[6];
-    for (int i = 0; i < 6; i++)
+    int[] lotto = new int[6];
+    for (int i = 0; i < lotto.length; i++)
     {
-        list1array[i] = (int)(Math.random() * 53 + 1);
+        int num = (int)(Math.random()* list1.size());
+        list1.remove(list1.indexOf(num));
+        lotto[i] = num;
+    }
+    
+    for(int i = 0;i <lotto.length;i++)
+    {
+        System.out.println(lotto[i]);
     }
 
-    for(int s: list1array)
-    {
-        System.out.println(list1.remove(s));
-    }
-    
-    System.out.println(list1);
-    
+  
 /*
     ArrayList <CD> mycds = new ArrayList<>();
 
