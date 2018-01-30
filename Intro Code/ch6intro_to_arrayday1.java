@@ -107,6 +107,7 @@ public static void main (String[] args)
     }
     
 */
+/*
     //version 3
     int count = 0;
     for(int i = farm.size()-1; i >= 0; i--)
@@ -121,9 +122,9 @@ public static void main (String[] args)
     System.out.println(farm);
     
     farm.add(0,"Emu"); //adds emu at start of arraylist
-    farm.set(0,"Owl"); //replaces emu with owl
+    farm.set(0,"Owl"); //replaces emu with owl & returns emu 
     
-/**/
+/*
     ArrayList <String> list = new ArrayList<>();
 
     //ArrayList <int> list1 = new ArrayList<>();    // no primitive data types
@@ -141,7 +142,7 @@ public static void main (String[] args)
     for (int i = 0; i < lotto.length; i++)
     {
         int num = (int)(Math.random()* list1.size());
-        list1.remove(list1.indexOf(num));
+        list1.remove(list1.indexOf(num));//broken a bit
         lotto[i] = num;
     }
     
