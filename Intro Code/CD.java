@@ -63,4 +63,9 @@ public class CD
     {
         return cost;
     }
+    
+    public String getArtist()
+    {
+        return artist;
+    }
 }

@@ -1,3 +1,6 @@
+//Lizzie and Brad
+
+
 //********************************************************************
 //  CDCollection.java       Author: Lewis/Loftus/Cocking
 //
@@ -30,18 +33,34 @@ public class CDCollection
       rating.
    *  @param
    */
-   public void addCD (String title, String artist, double cost,
-                      int tracks, double rating)
+   public void addCD (CD cd)
    {// must rewrite this method!!!!!!!!!
-
+       int x = 0;
+       if (collection.size() == 0)
+       {
+           collection.add(cd);
+        }
+        for(int i = 0; i < collection.size();i++)
+        {
+            if (cd.getRating()> collection.get(i).getRating())
+            {
+                collection.add(i,cd);
+                i = collection.size();
+            }
+        }
        
-      // if (count == collection.size())
+        collection.add(cd);
+     
+      totalCost += cd.getPrice();
+      //count++;
+      
+      //our attempt :(
+      
+       // if (count == collection.size())
       //   increaseSize();
 
       //collection[count] = new CD (title, artist, cost, tracks);
-      collection.add(new CD (title, artist, cost, tracks, rating));
-      totalCost += cost;
-      //count++;
+      //collection.add(new CD (title, artist, cost, tracks, rating));
    }
 
    /**
@@ -67,40 +86,59 @@ public class CDCollection
    }
    
    
-   //WHAT ARE WE SUPPOSED TO RETURN???
-   public void removeCD(String CDName)
+
+   public CD removeCD(String CDName)
    {
        int r = collection.indexOf(CDName);
-       collection.remove(r);
+       CD new_cd = collection.remove(r);
        
-       //return collection.get(r);
-       
+       return new_cd;
     }
    
     //couldn't figure out how to do this in CD
     public CD cheapest(int rate)
    {
-       ArrayList <CD> temp = new ArrayList<>();
+       CD cheapest = new CD("","",100,0,rate);
        for(int i = 0; i < collection.size(); i++)
        {
            if (collection.get(i).getRating() == rate)
            {
-               temp.add(collection.get(i));
+               if (collection.get(i).getPrice() < cheapest.getPrice())
+               {
+                   cheapest = collection.get(i);
+                }
             }
         }
-        
-       for(int i = 0; i < temp.size()-1; i++)
-       {
-           if (temp.get(i).getPrice() < temp.get(i+1).getPrice())
-           {
-               temp.remove(temp.get(i+1));
-            }
-           
-        }
-       CD cheap = temp.get(0); 
        
-       return cheap;
+       
+       return cheapest;
     }
+    
+    public ArrayList<CD> choices(double low, double high, double rating)
+    {
+        ArrayList<CD> temp = new ArrayList<>();
+        
+        for(int i = 0; i < collection.size();i++)
+        {
+            if (collection.get(i).getRating() == rating)
+            {
+                if(collection.get(i).getPrice() > low && collection.get(i).getPrice() < high)
+                {
+                    temp.add(collection.get(i));
+                }
+            }
+        }
+        return temp;
+    }
+    
+    public void print()
+    {
+        for(int i = 0; i < collection.size();i++)
+        {
+            System.out.printf("Artist: %10s \n", collection.get(i).getArtist());
+        }
+    }
+    
    //-----------------------------------------------------------------
 //    //  Doubles the size of the collection by creating a larger array
 //    //  and copying the existing collection into it.
