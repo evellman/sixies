@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=magic_square
+comment0.target=MagicSquare(int[][])
+comment1.params=
+comment1.target=boolean\ isMagic()
+numComments=2
