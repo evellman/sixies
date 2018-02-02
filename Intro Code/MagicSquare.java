@@ -5,30 +5,97 @@ public class MagicSquare
     
     public MagicSquare(int[][] magic_square)
     {
-        for(int j = 0; j < magic_square[0].length; j++)
-        {
-            magicNum += j;
-        }
         square = magic_square;
+        
+        magicNum = addRow(0);
+        
+    }
+    
+    public static void setMagicSquare(int[][] magic_square)
+    {
+        square = magic_square;
+        magicNum = addRow(0);
+    }
+    
+    public static int getMagicNum()
+    {
+        return magicNum;
     }
     
     public static boolean isMagic()
     {
-        int total = 0;
-        for (int i = 0; i < square.length;i++)
+        for (int i = 0; i < square.length; i++)
         {
-            for (int j = 0; j < square[i].length;j++)
-            {
-                total += j;
-            }
-            
-            if (total != magicNum)
+            if (addRow(i) != magicNum)
             {
                 return false;
             }
-            
-            total = 0;
         }
+        
+        for(int j = 0; j < square[0].length; j++)
+        {
+            if(addCol(j) != magicNum)
+            {
+                return false;
+            }
+        }
+        
+        if (addDiag1() != magicNum)
+        {
+            return false;
+        }
+        
+        if (addDiag2() != magicNum)
+        {
+            return false;
+        }
+        
         return true;
+    }
+    
+    private static int addRow(int row)
+    {
+        int num = 0;
+        for(int i = 0; i < square[row].length; i++)
+        {
+            num += square[row][i];
+        }
+        return num;
+    }
+    
+    private static int addCol(int col)
+    {
+        int num = 0;
+
+        for (int j = 0; j < square[0].length; j++)
+        {
+            num += square[0][j];
+        }
+
+        return num;
+    }
+    
+    private static int addDiag1()
+    {
+        int num = 0;
+        
+        for(int i = 0; i < square.length; i++)
+        {
+            num += square[i][i];
+        }
+        
+        return num;
+    }
+    
+    private static int addDiag2()
+    {
+        int num = 0;
+        
+        for(int i = 0; i < square.length;i++)
+        {
+            num += square[i][square.length-1];
+        }
+        
+        return num;
     }
 }
