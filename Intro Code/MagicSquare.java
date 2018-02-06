@@ -1,3 +1,6 @@
+//Lizzie Ellman
+//2-6-18
+
 public class MagicSquare
 {
     public static int magicNum;
@@ -11,17 +14,27 @@ public class MagicSquare
         
     }
     
+    /**
+     * changes magic square and finds potential magic num
+     */
     public static void setMagicSquare(int[][] magic_square)
     {
         square = magic_square;
         magicNum = addRow(0);
     }
     
+    /**
+     * return the magic number
+     */
     public static int getMagicNum()
     {
         return magicNum;
     }
     
+    /**
+     * adds up rows, columns, and diagonals 
+     * returns if it is a magic square or not
+     */
     public static boolean isMagic()
     {
         for (int i = 0; i < square.length; i++)
@@ -53,6 +66,10 @@ public class MagicSquare
         return true;
     }
     
+    /**
+     * adds given row
+     * return sum
+     */
     private static int addRow(int row)
     {
         int num = 0;
@@ -63,6 +80,10 @@ public class MagicSquare
         return num;
     }
     
+    /**
+     * adds given column
+     * return sum
+     */
     private static int addCol(int col)
     {
         int num = 0;
@@ -75,6 +96,10 @@ public class MagicSquare
         return num;
     }
     
+    /**
+     * adds diagonal (from top left to bottom right)
+     * return sum
+     */
     private static int addDiag1()
     {
         int num = 0;
@@ -87,13 +112,17 @@ public class MagicSquare
         return num;
     }
     
+    /**
+     * adds diagonal (from top right to bottom left)
+     * return sum
+     */
     private static int addDiag2()
     {
         int num = 0;
-        
-        for(int i = 0; i < square.length;i++)
+
+        for (int i = 0; i < square.length; i++)
         {
-            num += square[i][square.length-1];
+            num += square[i][square.length-(1+i)];
         }
         
         return num;
