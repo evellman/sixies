@@ -13,8 +13,8 @@ public class Account implements Comparable
 
    private final double RATE = 0.035;  // interest rate of 3.5%
 
-	private boolean locked_obj = false;
-	private int password = 54321;
+    private boolean locked_obj = false;
+    private int password = 54321;
 
    private int acctNumber;
    private double balance;
@@ -41,18 +41,18 @@ public class Account implements Comparable
    {
       if(locked_obj)
       {
-		  System.out.println("access is denied--foo");
-		  return 0;
-	  }
-		  if (amount < 0)  // deposit value is negative
-		  {
-			 System.out.println ();
-			 System.out.println ("Error: Deposit amount is invalid.");
-			 System.out.println (acctNumber + "  " + fmt.format(amount));
-		  }
-		  else
-			 balance = balance + amount;
-		  return balance;
+          System.out.println("access is denied--foo");
+          return 0;
+      }
+          if (amount < 0)  // deposit value is negative
+          {
+             System.out.println ();
+             System.out.println ("Error: Deposit amount is invalid.");
+             System.out.println (acctNumber + "  " + fmt.format(amount));
+          }
+          else
+             balance = balance + amount;
+          return balance;
 
 
 
@@ -64,33 +64,33 @@ public class Account implements Comparable
    //-----------------------------------------------------------------
    public double withdraw (double amount, double fee)
    {
-	   if (locked_obj)
-	   {
-		   System.out.println("access denied foo");
-		   return 0;
-	   }
-			amount += fee;
+       if (locked_obj)
+       {
+           System.out.println("access denied foo");
+           return 0;
+       }
+            amount += fee;
 
-			if (amount < 0)  // withdraw value is negative
-			{
-			 System.out.println ();
-			 System.out.println ("Error: Withdraw amount is invalid.");
-			 System.out.println ("Account: " + acctNumber);
-			 System.out.println ("Requested: " + fmt.format(amount));
-			}
-			else
-			 if (amount > balance)  // withdraw value exceeds balance
-			 {
-				System.out.println ();
-				System.out.println ("Error: Insufficient funds.");
-				System.out.println ("Account: " + acctNumber);
-				System.out.println ("Requested: " + fmt.format(amount));
-				System.out.println ("Available: " + fmt.format(balance));
-			 }
-			 else
-				balance = balance - amount;
+            if (amount < 0)  // withdraw value is negative
+            {
+             System.out.println ();
+             System.out.println ("Error: Withdraw amount is invalid.");
+             System.out.println ("Account: " + acctNumber);
+             System.out.println ("Requested: " + fmt.format(amount));
+            }
+            else
+             if (amount > balance)  // withdraw value exceeds balance
+             {
+                System.out.println ();
+                System.out.println ("Error: Insufficient funds.");
+                System.out.println ("Account: " + acctNumber);
+                System.out.println ("Requested: " + fmt.format(amount));
+                System.out.println ("Available: " + fmt.format(balance));
+             }
+             else
+                balance = balance - amount;
 
-			return balance;
+            return balance;
    }
 
    //-----------------------------------------------------------------
@@ -131,47 +131,46 @@ public class Account implements Comparable
       //-----------------------------------------------------------------
      public void setkey (int pass)
      {
-		password = pass;
-	 }
+        password = pass;
+     }
 
-	 public void lock ( int locker)
-	 {
-		 if (locker == password)
-		 	locked_obj = true;
+     public void lock ( int locker)
+     {
+         if (locker == password)
+            locked_obj = true;
 
-	 }
-	 public void unlock(int unlocker)
-	 {
-	 	if (unlocker == password)
-		 	locked_obj = false;
-	 }
+     }
+     public void unlock(int unlocker)
+     {
+        if (unlocker == password)
+            locked_obj = false;
+     }
 
-	public boolean locked ()
-	{
-		return locked_obj;
-	}
+    public boolean locked ()
+    {
+        return locked_obj;
+    }
 
-	//Comparable methods----------------------------
-	      //  This is the section to implement interface Comparable
-	      // it compares the acctNumber
-	      //-----------------------------------------------------------------
-	public int compareTo (Object o)
-	{
-			Account a = (Account)o;
-
-
-			return 0;
-	}
+    //Comparable methods----------------------------
+          //  This is the section to implement interface Comparable
+          // it compares the acctNumber
+          //-----------------------------------------------------------------
+    public int compareTo (Object o)
+    {
+            Account a = (Account)o;
 
 
-	public int hash_code()
-	{
-		int hash_num = 0;
-		int temp = 0;
+            return 0;
+    }
 
 
-		return hash_num;
-	}
+    public int hash_code()
+    {
+        int hash_num = 0;
+
+        for (go thru acctNum? 
+        return hash_num;
+    }
 
 
 

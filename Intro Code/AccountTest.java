@@ -1,4 +1,4 @@
-public class AccountTest //implements Comparable
+public class AccountTest 
 {
     public static void main (String[] args)
     {
