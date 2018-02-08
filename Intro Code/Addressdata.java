@@ -43,7 +43,7 @@ Address Tom   = new Address ("916 Elm Street","Flossmoor", "IL", 60148);
 	  	System.out.println("-"+me.hash()%30);
 	}
 
-
+System.out.println("------------------------------");
 	  Address [] hash_array = new Address[3*contacts.length];
 
 	  for( int i = 0; i<contacts.length;i++)

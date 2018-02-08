@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=value\ type
+comment0.target=Coin(double,\ char)
+comment1.params=
+comment1.target=double\ getValue()
+comment2.params=
+comment2.target=char\ getType()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

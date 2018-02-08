@@ -19,18 +19,18 @@ public class Account implements Comparable
    private int acctNumber;
    private double balance;
    private String name;
-   private int type; //1- savings, 2 - checking, 2 - other
+   private Address address; //1- savings, 2 - checking, 2 - other
 
    //-----------------------------------------------------------------
    //  Sets up the account by defining its owner, account number,
    //  and initial balance.
    //-----------------------------------------------------------------
-   public Account (String owner, int account, double initial, int type)
+   public Account (String owner, int account, double initial, Address address)
    {
       name = owner;
       acctNumber = account;
       balance = initial;
-      this.type = type;
+      this.address = address;
    }
 
    //-----------------------------------------------------------------
@@ -167,8 +167,13 @@ public class Account implements Comparable
     public int hash_code()
     {
         int hash_num = 0;
-
-        for (go thru acctNum? 
+        
+        hash_num += address.hash();
+        for (int i = 0; i<name.length(); i++)
+        {
+              hash_num += name.charAt(i);
+        }
+        
         return hash_num;
     }
 
