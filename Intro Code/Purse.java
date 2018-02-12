@@ -5,20 +5,78 @@ import java.util.*;
 
 public class Purse
 {
-    public static void main(String[] args)
+    private ArrayList <Coin> pocket = new ArrayList<>();
+    
+    public Purse (ArrayList <Coin> purse)
     {
-        Coin coin1 = new Coin(.01,'p');
-        Coin coin2 = new Coin(.10,'d');
-        Coin coin3 = new Coin(.25,'q');
-        Coin coin4 = new Coin(.25,'q');
-        Coin coin5 = new Coin(.05,'n');
-        
-        ArrayList <Coin> pocket = new ArrayList<>();
-        
-        pocket.add(coin1);
-        pocket.add(coin2);
-        pocket.add(coin3);
-        pocket.add(coin4);
-        pocket.add(coin5);
+        pocket = purse;
+    }
+    
+    public double getTotal()
+    {
+        int total = 0;
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            total += pocket.get(i).getValue();
+        }
+        return total;
+    }
+    
+    public String toString()
+    {
+        String result = "";
+        return result;      //INCOMPLETE
+    }
+    
+    public int getDimes()
+    {
+        int num = 0;
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            if (pocket.get(i).getType() == 'd')
+            {
+                num++;
+            }
+        }
+        return num;
+    }
+    
+    public int getPennies()
+    {
+        int num = 0;
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            if (pocket.get(i).getType() == 'p')
+            {
+                num++;
+            }
+        }
+        return num;
+    }
+    
+    public int getNickels()
+    {
+        int num = 0;
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            if (pocket.get(i).getType() == 'n')
+            {
+                num++;
+            }
+        }
+        return num;
+    }
+    
+    public int getQuarters()
+    {
+        int num = 0;
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            if (pocket.get(i).getType() == 'q')
+            {
+                num++;
+            }
+        }
+        return num;
     }
 }

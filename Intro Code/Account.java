@@ -169,17 +169,14 @@ public class Account implements Comparable
         int hash_num = 0;
         
         hash_num += address.hash();
-        for (int i = 0; i<name.length(); i++)
+        hash_num *= acctNumber;
+        for (int i = 0; i < name.length(); i++)
         {
-              hash_num += name.charAt(i);
+              hash_num *= name.charAt(i);
         }
         
         return hash_num;
     }
-
-
-
-
 
 
 }

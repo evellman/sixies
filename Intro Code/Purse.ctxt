@@ -1,4 +1,16 @@
 #BlueJ class context
-comment0.params=args
-comment0.target=void\ main(java.lang.String[])
-numComments=1
+comment0.params=purse
+comment0.target=Purse(java.util.ArrayList)
+comment1.params=
+comment1.target=double\ getTotal()
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=
+comment3.target=int\ getDimes()
+comment4.params=
+comment4.target=int\ getPennies()
+comment5.params=
+comment5.target=int\ getNickels()
+comment6.params=
+comment6.target=int\ getQuarters()
+numComments=7
