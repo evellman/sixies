@@ -163,7 +163,10 @@ public class Account implements Comparable
             return 0;
     }
 
-
+    /**
+     * Creates an  8 digit hash_code
+     * @return int hash_code
+     */
     public int hash_code()
     {
         int hash_num = 0;
@@ -176,6 +179,7 @@ public class Account implements Comparable
               hash_num *= name.charAt(i);
         }
         hash_num /= factor;
+        hash_num %= 100000000;
         return hash_num;
     }
 

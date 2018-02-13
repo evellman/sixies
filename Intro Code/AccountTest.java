@@ -21,7 +21,7 @@ public class AccountTest
         
         for (int i = 0; i < accounts.length; i++)   
         {
-            int num = (accounts[i].hash_code()) % 100000000;
+            int num = accounts[i].hash_code();
             if (num < 0)
                 num *= -1;
             accounts[i].setAcctNum(num);        //changes acctNumber to 8 digit hashcode
@@ -35,6 +35,13 @@ public class AccountTest
             hash_array[hashnum] = accounts[j];
         }
 
+        for (Account acc : accounts)
+        {
+            System.out.println(acc);
+        }
+        
+        System.out.println("---------------");
+        
         for (Account acc : hash_array)  
         {
             System.out.println(acc);

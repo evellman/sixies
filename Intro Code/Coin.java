@@ -42,21 +42,33 @@ public class Coin
       return (face == HEADS);
    }
 
+   /**
+    * @return double value
+    */
    public double getValue()
    {
        return value;
     }
-    
+   
+    /**
+     * @param double num
+     */
    public void setValue(double num)
    {
        value = num;
     }
-    
+   
+    /**
+     * @return char type
+     */
    public char getType()
    {
        return type;
     }
     
+   /**
+    * @param char var
+    */ 
    public void setType(char var)
    {
        type = var;

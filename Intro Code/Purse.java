@@ -12,6 +12,10 @@ public class Purse
         pocket = purse;
     }
     
+    /**
+     * calculates and returns total
+     * @return double total
+     */
     public double getTotal()
     {
         double total = 0;
@@ -22,16 +26,28 @@ public class Purse
         return total;
     }
     
+    /**
+     * adds a coin to the purse
+     * @param Coin coin
+     */
     public void addCoin(Coin coin)
     {
         pocket.add(coin);
     }
     
+    /**
+     * removes a coin from the purse
+     * @param int index value
+     */
     public void removeCoin(int num)
     {
         pocket.remove(num);
     }
     
+    /**
+     * displays each coin object (value and type)
+     * @return String message
+     */
     public String toString()
     {
         String result = "";
@@ -41,6 +57,8 @@ public class Purse
         }
         return result;      
     }
+    
+    //following methods go thru purse and find the number of each type of coin
     
     public int getDimes()
     {

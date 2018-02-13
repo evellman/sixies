@@ -9,6 +9,7 @@ comment11.params=o
 comment11.target=int\ compareTo(java.lang.Object)
 comment12.params=
 comment12.target=int\ hash_code()
+comment12.text=\r\n\ Creates\ an\ \ 8\ digit\ hash_code\r\n\ @return\ int\ hash_code\r\n
 comment13.params=num
 comment13.target=void\ setAcctNum(int)
 comment14.params=
