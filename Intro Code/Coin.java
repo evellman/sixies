@@ -47,9 +47,19 @@ public class Coin
        return value;
     }
     
+   public void setValue(double num)
+   {
+       value = num;
+    }
+    
    public char getType()
    {
        return type;
+    }
+    
+   public void setType(char var)
+   {
+       type = var;
     }
     
    /**-----------------------------------------------------------------

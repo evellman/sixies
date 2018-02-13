@@ -167,6 +167,7 @@ public class Account implements Comparable
     public int hash_code()
     {
         int hash_num = 0;
+        int factor = address.hash();
         
         hash_num += address.hash();
         hash_num *= acctNumber;
@@ -174,11 +175,20 @@ public class Account implements Comparable
         {
               hash_num *= name.charAt(i);
         }
-        
+        hash_num /= factor;
         return hash_num;
     }
 
-
+   
+    public void setAcctNum(int num)
+    {
+        this.acctNumber = num;
+    }
+    
+    public int getAcctNum()
+    {
+        return acctNumber;
+    }
 }
 
 

@@ -17,21 +17,27 @@ public class AccountTest
         Account p9 = new Account("Megan MulCahey", 4568, 9041.49, home);
         
         Account[] accounts = {p0,p1,p2,p3,p4,p5,p6,p7,p8,p9};
-        
-        int[] hashes = new int[accounts.length];
 
         
-        for (int i = 0; i < accounts.length; i++)
+        for (int i = 0; i < accounts.length; i++)   
         {
             int num = (accounts[i].hash_code()) % 100000000;
             if (num < 0)
                 num *= -1;
-            hashes[i] = num;
+            accounts[i].setAcctNum(num);        //changes acctNumber to 8 digit hashcode
         }
+
+        Account[] hash_array = new Account[accounts.length*2];
         
-        int[] new_accounts = new int[accounts.length * 2];
-        /*
-         * figure out how to put accounts into array 
-         */
+        for (int j = 0; j < accounts.length; j++)   
+        {
+            int hashnum = accounts[j].getAcctNum() % 20;
+            hash_array[hashnum] = accounts[j];
+        }
+
+        for (Account acc : hash_array)  
+        {
+            System.out.println(acc);
+        }
     }
 }

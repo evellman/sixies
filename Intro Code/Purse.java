@@ -14,7 +14,7 @@ public class Purse
     
     public double getTotal()
     {
-        int total = 0;
+        double total = 0;
         for (int i = 0; i < pocket.size(); i++)
         {
             total += pocket.get(i).getValue();
@@ -22,10 +22,24 @@ public class Purse
         return total;
     }
     
+    public void addCoin(Coin coin)
+    {
+        pocket.add(coin);
+    }
+    
+    public void removeCoin(int num)
+    {
+        pocket.remove(num);
+    }
+    
     public String toString()
     {
         String result = "";
-        return result;      //INCOMPLETE
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            result += pocket.get(i) + "\n";
+        }
+        return result;      
     }
     
     public int getDimes()
