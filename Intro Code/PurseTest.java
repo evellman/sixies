@@ -1,3 +1,6 @@
+//Lizzie Ellman
+
+
 import java.util.*;
 public class PurseTest
 {
@@ -70,5 +73,6 @@ public class PurseTest
                 System.out.println(pocket);
             }
         }
+        System.out.println("Thanks for using the purse program!");
     }
 }

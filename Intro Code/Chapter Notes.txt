@@ -1,4 +1,0 @@
-I think this chapter went okay. 
-I thought hashing was a little confusing, but it actually makes a lot of sense now that I get it.
-Also, the differences between arrays and ArrayLists are kind of annoying.
-:)

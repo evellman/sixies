@@ -165,12 +165,12 @@ public class Account implements Comparable
 
     /**
      * Creates an  8 digit hash_code
+     * Uses address's hash, acctNumber, and name
      * @return int hash_code
      */
     public int hash_code()
     {
         int hash_num = 0;
-        int factor = address.hash();
         
         hash_num += address.hash();
         hash_num *= acctNumber;
@@ -178,7 +178,7 @@ public class Account implements Comparable
         {
               hash_num *= name.charAt(i);
         }
-        hash_num /= factor;
+        hash_num /= address.hash();
         hash_num %= 100000000;
         return hash_num;
     }
